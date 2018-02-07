@@ -11,3 +11,5 @@ RUN rm /etc/nginx/conf.d/default.conf
 RUN mkdir -p $WWW_PATH && chown nginx:nginx $WWW_PATH
 # Add our file to the configuration path
 COPY etc/nginx/conf.d/main.conf /etc/nginx/conf.d/
+# Add our blog files to the web path
+COPY usr/share/www/html/* /usr/share/www/html/
