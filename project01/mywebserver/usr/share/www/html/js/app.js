@@ -27,3 +27,12 @@ app.controller('postController', function($scope, $http, $routeParams) {
         $scope.post = response.data;
     });
 });
+app.controller('formController', function($scope,$http){
+	$scope.form = {};
+	$scope.submitForm = function(){
+		$http.post('/api/posts',$scope.form).then(function(data){
+			console.log(data);
+			$scope.success = "Post created successfully";
+		});
+	};
+});
